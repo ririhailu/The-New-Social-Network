@@ -7,3 +7,6 @@ const thoughtsRoutes = require('./thought-routes');
 
 // Add `/users` to created routes 
 router.use('/users', usersRoutes);
+
+// Add `/thoughts` to created routes 
+router.use('/thoughts', thoughtsRoutes);
