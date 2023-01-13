@@ -2,10 +2,10 @@
 const router = require('express').Router();
 
 // Set requirements (from thoughts-controller)
-const { 
-    getAllThoughts, 
-    getThoughtsById, 
-    createThoughts, 
+const {
+    getAllThoughts,
+    getThoughtsById,
+    createThoughts,
     updateThoughts,
     deleteThoughts,
     addReaction,
@@ -17,7 +17,7 @@ const {
 router.route('/').get(getAllThoughts);
 
 // -- Directs to: /api/thoughts/:id <GET, PUT, DELETE>
-router.route('/:id').get(getThoughtsById).put(updateThoughts).delete(deleteThoughts); 
+router.route('/:id').get(getThoughtsById).put(updateThoughts).delete(deleteThoughts);
 
 // -- Directs to: /api/thoughts/:userId <POST>
 router.route('/:userId').post(createThoughts);
