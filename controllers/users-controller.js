@@ -15,9 +15,9 @@ const usersController = {
     getAllUsers(req, res) {
         Users.find({})
             // populate users thoughts
-            .populate({ path: 'thoughts', select: '-__v' })
+            //.populate({ path: 'thoughts', select: '-__v' })
             // populate user friends
-            .populate({ path: 'friends', select: '-__v' })
+           // .populate({ path: 'friends', select: '-__v' })
             .select('-__v')
             // .sort({_id: -1})
             .then(dbUsersData => res.json(dbUsersData))
@@ -55,7 +55,7 @@ const usersController = {
                     res.status(404).json({ message: 'No User with this particular ID!' });
                     return;
                 }
-                res.json(dbUserData);
+                res.json(dbUsersData);
             })
             .catch(err => res.json(err))
     },
